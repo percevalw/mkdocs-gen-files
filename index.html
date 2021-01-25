@@ -191,7 +191,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/literate-nav/" class="md-tabs__link">
+    <a href="/mkdocs-literate-nav/" class="md-tabs__link">
       literate-nav
     </a>
   </li>
@@ -310,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/literate-nav/" class="md-nav__link">
+      <a href="/mkdocs-literate-nav/" class="md-nav__link">
         literate-nav
       </a>
     </li>
@@ -511,6 +511,19 @@
     Usage
   </a>
   
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    Use cases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -568,6 +581,10 @@
 </code></pre></div>
 </details>
 <p>This adds programmatically generated pages to our site. This example script has been applied to this very site, you can see <a href="sample/99-bottles.html">sample/99-bottles.md</a> etc.</p>
+<h3 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">#</a></h3>
+<p>You might be wondering, what's the point of this?</p>
+<p>The original use case was <a href="https://pawamoy.github.io/mkdocstrings/usage/">with mkdocstrings</a> - <a href="https://oprypin.github.io/mkdocstrings-crystal/quickstart/migrate.html#generate-doc-stub-pages">generating pages with just stubs</a> for each item in API documentation, so that they can be populated by the tools.</p>
+<p>You can also modify all existing files on the site in some way. Or perhaps copy files from somewhere on the fly.</p>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>For all intents and purposes, please conceptualize the <a href="api.html"><code>mkdocs_gen_files.open()</code></a> function as the actual <a href="https://docs.python.org/3/library/functions.html#open"><code>open()</code></a> function running under the <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir">docs_dir</a> (<em>./docs/</em> by default, picked up from <em>mkdocs.yml</em>). In fact, if a script using <em>mkdocs_gen_files</em> is launched standalone, that is <em>actually</em> the case; you can use that to try out how the results look (though manual cleanup will be required).</p>
 <p>But if attached as a MkDocs plugin, it represents that directory only virtually; <strong>all file modifications affect only the ongoing site build and aren't persisted</strong>. But you can still read (and even virtually append to) the actual files under <em>docs/</em>.</p>
