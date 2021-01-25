@@ -566,7 +566,7 @@
 <p>Then create such a script <em>gen_pages.py</em> (this is relative to the root, <em>not</em> to the <em>docs</em> directory).</p>
 <details class="example" open="open"><summary>Basic gen_pages.py</summary><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">mkdocs_gen_files</span>
 
-<span class="k">with</span> <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;foo.md&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;foo.md&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
 </code></pre></div>
 </details>
