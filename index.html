@@ -551,14 +551,14 @@
 <div class="highlight"><pre><span></span><code>pip install mkdocs-gen-files
 </code></pre></div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
-<p>Activate the plugin in <em>mkdocs.yml</em> (<code>scripts</code> is a required list of Python scripts to execute):</p>
+<p>Activate the plugin in <strong>mkdocs.yml</strong> (<code>scripts</code> is a required list of Python scripts to execute):</p>
 <div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">search</span>
   <span class="p p-Indicator">-</span> <span class="nt">gen-files</span><span class="p">:</span>
       <span class="nt">scripts</span><span class="p">:</span>
         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">gen_pages.py</span>  <span class="c1"># or any other name or path</span>
 </code></pre></div>
-<p>Then create such a script <em>gen_pages.py</em> (this is relative to the root, <em>not</em> to the <em>docs</em> directory).</p>
+<p>Then create such a script <strong>gen_pages.py</strong> (this is relative to the root, <em>not</em> to the <strong>docs</strong> directory).</p>
 <details class="example" open="open"><summary>Basic gen_pages.py</summary><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">mkdocs_gen_files</span>
 
 <span class="k">with</span> <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;foo.md&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -581,12 +581,12 @@
 <p>The original use case was <a href="https://pawamoy.github.io/mkdocstrings/usage/">with mkdocstrings</a> - <a href="https://oprypin.github.io/mkdocstrings-crystal/quickstart/migrate.html#generate-doc-stub-pages">generating pages with just stubs</a> for each item in API documentation, so that they can be populated by the tools.</p>
 <p>You can also modify all existing files on the site in some way. Or perhaps copy files from somewhere on the fly.</p>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
-<p>For all intents and purposes, please conceptualize the <a href="api.html"><code>mkdocs_gen_files.open()</code></a> function as the actual <a href="https://docs.python.org/3/library/functions.html#open"><code>open()</code></a> function running under the <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir">docs_dir</a> (<em>./docs/</em> by default, picked up from <em>mkdocs.yml</em>). In fact, if a script using <em>mkdocs_gen_files</em> is launched standalone, that is <em>actually</em> the case; you can use that to try out how the results look (though manual cleanup will be required).</p>
-<p>But if attached as a MkDocs plugin, it represents that directory only virtually; <strong>all file modifications affect only the ongoing site build and aren't persisted</strong>. But you can still read (and even virtually append to) the actual files under <em>docs/</em>.</p>
+<p>For all intents and purposes, please conceptualize the <a href="api.html"><code>mkdocs_gen_files.open()</code></a> function as the actual <a href="https://docs.python.org/3/library/functions.html#open"><code>open()</code></a> function running under the <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir">docs_dir</a> (<strong>./docs/</strong> by default, picked up from <strong>mkdocs.yml</strong>). In fact, if a script using <em>mkdocs_gen_files</em> is launched standalone, that is <em>actually</em> the case; you can use that to try out how the results look (though manual cleanup will be required).</p>
+<p>But if attached as a MkDocs plugin, it represents that directory only virtually; <strong>all file modifications affect only the ongoing site build and aren't persisted</strong>. But you can still read (and even virtually append to) the actual files under <strong>docs/</strong>.</p>
 <p>This is implemented by implicitly transferring the files to a temporary directory (which is what you really end up opening) and telling MkDocs to fetch them from there instead.
 Note that this happens before MkDocs reads any of the doc files, so all of the outputs should look to it exactly as if the files were there all along.</p>
 <p>All file modes are supported (even e.g. <code>ab+</code>). You could even open a file to read it, replace something in it, and write it back anew. Though at that point you may be better served by the <a href="https://github.com/fralau/mkdocs_macros_plugin/">"macros" plugin</a>.</p>
-<p>Note that this function is separate from the top-level built-in <code>open()</code>, which is unaffected and can still be used normally, relative to the current working directory (which is <em>not</em> changed to <em>./docs/</em>, instead it's just the directory that you ran <code>mkdocs</code> from).</p>
+<p>Note that this function is separate from the top-level built-in <code>open()</code>, which is unaffected and can still be used normally, relative to the current working directory (which is <em>not</em> changed to <strong>./docs/</strong>, instead it's just the directory that you ran <code>mkdocs</code> from).</p>
                 
               
               
