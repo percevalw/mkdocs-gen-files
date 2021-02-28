@@ -42,6 +42,8 @@
     
     
     
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
       <link rel="stylesheet" href="assets/style.css">
     
     
@@ -727,9 +729,13 @@
                 
                 
                 <h1 id="api">API<a class="headerlink" href="#api" title="Permanent link">#</a></h1>
-<div class="doc doc-object doc-module">
-<h2 class="doc doc-heading" id="mkdocs_gen_files">
 
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="mkdocs_gen_files" class="doc doc-heading">
         <code>mkdocs_gen_files</code>
 
 
@@ -737,82 +743,160 @@
       <small class="doc doc-property doc-property-special"><code>special</code></small>
   </span>
 
-      <a class="headerlink" href="#mkdocs_gen_files" title="Permanent link">#</a></h2>
-<div class="doc doc-contents first">
-<p>A magical module that forwards everything to <a href="#mkdocs_gen_files.editor.FilesEditor.current">mkdocs_gen_files.editor.FilesEditor.current</a>.</p>
+<a href="#mkdocs_gen_files" class="headerlink" title="Permanent link">#</a></h2>
+
+    <div class="doc doc-contents first">
+
+      <p>A magical module that forwards everything to <a href="#mkdocs_gen_files.editor.FilesEditor.current">mkdocs_gen_files.editor.FilesEditor.current</a>.</p>
 <p>Just <code>import mkdocs_gen_files</code>.</p>
 <p>Then <code>mkdocs_gen_files.open()</code> is the same as <code>mkdocs_gen_files.editor.FilesEditor.current.open()</code>.</p>
-</div>
-</div>
-<div class="doc doc-object doc-class">
-<h3 class="hidden-toc" id="mkdocs_gen_files.editor.FilesEditor" style="visibility: hidden; position: absolute;">
-        <a class="headerlink" href="#mkdocs_gen_files.editor.FilesEditor" title="Permanent link">#</a></h3>
-<div class="doc doc-contents first">
-<div class="doc doc-children">
-<div class="doc doc-object doc-attribute">
-<h3 class="doc doc-heading" id="mkdocs_gen_files.editor.FilesEditor.config">
 
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+<a id="mkdocs_gen_files.editor.FilesEditor"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="mkdocs_gen_files.editor.FilesEditor.config" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">config</span><span class="p">:</span> <span class="n">Config</span></code>
 
 
-      <a class="headerlink" href="#mkdocs_gen_files.editor.FilesEditor.config" title="Permanent link">#</a></h3>
-<div class="doc doc-contents ">
-<p>The current MkDocs <a href="https://www.mkdocs.org/user-guide/plugins/#config">config</a>.</p>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h3 class="doc doc-heading" id="mkdocs_gen_files.editor.FilesEditor.open">
+<a href="#mkdocs_gen_files.editor.FilesEditor.config" class="headerlink" title="Permanent link">#</a></h3>
 
+    <div class="doc doc-contents ">
+
+      <p>The current MkDocs <a href="https://www.mkdocs.org/user-guide/plugins/#config">config</a>.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="mkdocs_gen_files.editor.FilesEditor.open" class="doc doc-heading">
 <code class="highlight language-python"><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IO</span></code>
 
 
-      <a class="headerlink" href="#mkdocs_gen_files.editor.FilesEditor.open" title="Permanent link">#</a></h3>
-<div class="doc doc-contents ">
-<p>Open a file under <code>docs_dir</code> virtually.</p>
+<a href="#mkdocs_gen_files.editor.FilesEditor.open" class="headerlink" title="Permanent link">#</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Open a file under <code>docs_dir</code> virtually.</p>
 <p>This function, for all intents and purposes, is just an <code>open()</code> which pretends that it is
 running under <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir">docs_dir</a>
 (<em>docs/</em> by default), but write operations don't affect the actual files when running as
 part of a MkDocs build, but they do become part of the site build.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="doc doc-object doc-class">
-<h2 class="doc doc-heading" id="mkdocs_gen_files.editor.FilesEditor">
 
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="mkdocs_gen_files.editor.FilesEditor" class="doc doc-heading">
         <code>mkdocs_gen_files.editor.FilesEditor</code>
 
 
 
-      <a class="headerlink" href="#mkdocs_gen_files.editor.FilesEditor" title="Permanent link">#</a></h2>
-<div class="doc doc-contents first">
-<div class="doc doc-children">
-<div class="doc doc-object doc-attribute">
-<h3 class="doc doc-heading" id="mkdocs_gen_files.editor.FilesEditor.config">
+<a href="#mkdocs_gen_files.editor.FilesEditor" class="headerlink" title="Permanent link">#</a></h2>
 
+    <div class="doc doc-contents first">
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="mkdocs_gen_files.editor.FilesEditor.config" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">config</span><span class="p">:</span> <span class="n">Config</span></code>
 
 
-      <a class="headerlink" href="#mkdocs_gen_files.editor.FilesEditor.config" title="Permanent link">#</a></h3>
-<div class="doc doc-contents ">
-<p>The current MkDocs <a href="https://www.mkdocs.org/user-guide/plugins/#config">config</a>.</p>
-</div>
-</div>
-<div class="doc doc-object doc-attribute">
-<h3 class="doc doc-heading" id="mkdocs_gen_files.editor.FilesEditor.directory">
+<a href="#mkdocs_gen_files.editor.FilesEditor.config" class="headerlink" title="Permanent link">#</a></h3>
 
+    <div class="doc doc-contents ">
+
+      <p>The current MkDocs <a href="https://www.mkdocs.org/user-guide/plugins/#config">config</a>.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="mkdocs_gen_files.editor.FilesEditor.directory" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">directory</span><span class="p">:</span> <span class="nb">str</span></code>
 
 
-      <a class="headerlink" href="#mkdocs_gen_files.editor.FilesEditor.directory" title="Permanent link">#</a></h3>
-<div class="doc doc-contents ">
-<p>The base directory for <code>open()</code> (<a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir">docs_dir</a>).</p>
-</div>
-</div>
-<div class="doc doc-object doc-attribute">
-<h3 class="doc doc-heading" id="mkdocs_gen_files.editor.FilesEditor.files">
+<a href="#mkdocs_gen_files.editor.FilesEditor.directory" class="headerlink" title="Permanent link">#</a></h3>
 
+    <div class="doc doc-contents ">
+
+      <p>The base directory for <code>open()</code> (<a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir">docs_dir</a>).</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="mkdocs_gen_files.editor.FilesEditor.files" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">files</span><span class="p">:</span> <span class="n">Files</span></code>
 
   <span class="doc doc-properties">
@@ -820,59 +904,102 @@ part of a MkDocs build, but they do become part of the site build.</p>
       <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
   </span>
 
-      <a class="headerlink" href="#mkdocs_gen_files.editor.FilesEditor.files" title="Permanent link">#</a></h3>
-<div class="doc doc-contents ">
-<p>Access the files as they currently are, as a MkDocs <a href="https://github.com/mkdocs/mkdocs/blob/master/mkdocs/structure/files.py">Files</a> collection.</p>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h3 class="doc doc-heading" id="mkdocs_gen_files.editor.FilesEditor.current">
+<a href="#mkdocs_gen_files.editor.FilesEditor.files" class="headerlink" title="Permanent link">#</a></h3>
 
+    <div class="doc doc-contents ">
+
+      <p>Access the files as they currently are, as a MkDocs <a href="https://github.com/mkdocs/mkdocs/blob/master/mkdocs/structure/files.py">Files</a> collection.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="mkdocs_gen_files.editor.FilesEditor.current" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">current</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">FilesEditor</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
   </span>
 
-      <a class="headerlink" href="#mkdocs_gen_files.editor.FilesEditor.current" title="Permanent link">#</a></h3>
-<div class="doc doc-contents ">
-<p>The instance of FilesEditor associated with the currently ongoing MkDocs build.</p>
+<a href="#mkdocs_gen_files.editor.FilesEditor.current" class="headerlink" title="Permanent link">#</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>The instance of FilesEditor associated with the currently ongoing MkDocs build.</p>
 <p>If used as part of a MkDocs build (<em>gen-files</em> plugin), it's an instance using virtual
 files that feed back into the build.</p>
 <p>If not, this still tries to load the MkDocs config to find out the <em>docs_dir</em>, and then
 actually performs any file writes that happen via <code>.open()</code>.</p>
 <p>This is global (not thread-safe).</p>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h3 class="doc doc-heading" id="mkdocs_gen_files.editor.FilesEditor.open">
 
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="mkdocs_gen_files.editor.FilesEditor.open" class="doc doc-heading">
 <code class="highlight language-python"><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IO</span></code>
 
 
-      <a class="headerlink" href="#mkdocs_gen_files.editor.FilesEditor.open" title="Permanent link">#</a></h3>
-<div class="doc doc-contents ">
-<p>Open a file under <code>docs_dir</code> virtually.</p>
+<a href="#mkdocs_gen_files.editor.FilesEditor.open" class="headerlink" title="Permanent link">#</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Open a file under <code>docs_dir</code> virtually.</p>
 <p>This function, for all intents and purposes, is just an <code>open()</code> which pretends that it is
 running under <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir">docs_dir</a>
 (<em>docs/</em> by default), but write operations don't affect the actual files when running as
 part of a MkDocs build, but they do become part of the site build.</p>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h3 class="doc doc-heading" id="mkdocs_gen_files.editor.FilesEditor.set_edit_path">
 
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="mkdocs_gen_files.editor.FilesEditor.set_edit_path" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">set_edit_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">edit_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 
-      <a class="headerlink" href="#mkdocs_gen_files.editor.FilesEditor.set_edit_path" title="Permanent link">#</a></h3>
-<div class="doc doc-contents ">
-<p>Choose a file path to use for the edit URI of this file.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<a href="#mkdocs_gen_files.editor.FilesEditor.set_edit_path" class="headerlink" title="Permanent link">#</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Choose a file path to use for the edit URI of this file.</p>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
                 
               
               
