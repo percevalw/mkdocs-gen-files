@@ -19,12 +19,17 @@ except ImportError:
 from .config_items import ListOfFiles
 from .editor import FilesEditor
 
-log = logging.getLogger(f"mkdocs.plugins.{__name__}")
+try:
+    from mkdocs.plugins import event_priority
+except ImportError:
+    event_priority = lambda priority: lambda f: f  # No-op fallback
 
+log = logging.getLogger(f"mkdocs.plugins.{__name__}")
 
 class GenFilesPlugin(BasePlugin):
     config_scheme = (("scripts", ListOfFiles(required=True)),)
 
+    @event_priority(100)
     def on_files(self, files: Files, config: Config) -> Files:
         self._dir = tempfile.TemporaryDirectory(prefix="mkdocs_gen_files_")
 
@@ -57,6 +62,7 @@ class GenFilesPlugin(BasePlugin):
 
         return html
 
+    @event_priority(-100)
     def on_post_build(self, config: Config):
         self._dir.cleanup()
 
